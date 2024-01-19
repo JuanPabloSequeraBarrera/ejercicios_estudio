@@ -71,6 +71,7 @@ while sistema_en_uso:
         import os
         from tabulate import tabulate
         print(tabulate(equipos,headers=['Equipo','PJ','PG','GF','GC','PP','PE','TP']))
+        print('El equipo con mayor cantidad de puntos fue ',equipos[(7)])
         os.system('pause')
     elif (op ==4):
         sistema_en_uso = False
@@ -80,3 +81,5 @@ while sistema_en_uso:
         os.system('cls')
         print ('Digitacion de opcion no valida')
         os.system('pause')
+# #acceder a un elemento de la lista 
+# print (numero[0])

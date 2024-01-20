@@ -71,8 +71,39 @@ while sistema_en_uso:
         import os
         from tabulate import tabulate
         print(tabulate(equipos,headers=['Equipo','PJ','PG','GF','GC','PP','PE','TP']))
-        print('El equipo con mayor cantidad de puntos fue ',equipos[(7)])
+        for i,item in enumerate(equipos):
+            for j in range(int(i+1),len(equipos),1):
+                if (equipos[i][4] < equipos[j][4]):
+                    aux = equipos[i]
+                    equipos [i] =equipos [j]
+                    equipos[j] = aux
+            mayorgol = equipos[0][0]    
+            print (f'El equipo con mas goles fue {mayorgol} ')
+
+        for i,item in enumerate(equipos):
+            for j in range(int(i+1),len(equipos),1):
+                if (equipos[i][7] < equipos[j][7]):
+                    aux = equipos[i]
+                    equipos [i] =equipos [j]
+                    equipos[j] = aux
+            mayorpuntos = equipos[0][0]    
+            print (f'El equipo con mas puntos fue {mayorpuntos} ')
+
+        for i,item in enumerate(equipos):
+            for j in range(int(i+1),len(equipos),1):
+                if (equipos[i][2] < equipos[j][2]):
+                    aux = equipos[i]
+                    equipos [i] =equipos [j]
+                    equipos[j] = aux
+            mayorpartidos = equipos[0][0]    
+            print (f'El equipo que mas partidos gano fue {mayorpartidos} ')
         os.system('pause')
+
+        for item in equipos:
+            sumaequipos += item[4]
+            division += 1
+            promedio = sumaequipos/division
+            print(f'El promedio de goles de los equipos fue {promedio}')
     elif (op ==4):
         sistema_en_uso = False
         print ('muchas gracias por hacer uso del sofware')

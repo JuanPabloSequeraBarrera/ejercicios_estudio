@@ -13,6 +13,9 @@ opciones = '1.Agregar equipo\n2. Registro de partidos\n3.Reportes de tabla de po
 sistema_en_uso = True
 nfecha = []
 fecha_jueg = 0
+sumaequipos = 0
+division = 0
+promedio = 0
 while sistema_en_uso:
     os.system ('cls')
     print (titulo)
@@ -79,6 +82,7 @@ while sistema_en_uso:
                     equipos[j] = aux
             mayorgol = equipos[0][0]    
             print (f'El equipo con mas goles fue {mayorgol} ')
+            break
 
         for i,item in enumerate(equipos):
             for j in range(int(i+1),len(equipos),1):
@@ -88,6 +92,7 @@ while sistema_en_uso:
                     equipos[j] = aux
             mayorpuntos = equipos[0][0]    
             print (f'El equipo con mas puntos fue {mayorpuntos} ')
+            break
 
         for i,item in enumerate(equipos):
             for j in range(int(i+1),len(equipos),1):
@@ -97,7 +102,7 @@ while sistema_en_uso:
                     equipos[j] = aux
             mayorpartidos = equipos[0][0]    
             print (f'El equipo que mas partidos gano fue {mayorpartidos} ')
-        os.system('pause')
+            break
 
         for item in equipos:
             sumaequipos += item[4]

@@ -40,7 +40,6 @@ while isActive :
                 "estado":0
             }
             isAddTeam = bool(input("Desea continuar agregando mas equipos S(Si) o Enter(No) "))
-            federacion.update({str(len(federacion)+1).zfill(4):equipo})
 
     elif (op == 2):
         for key,valor in federacion.items():

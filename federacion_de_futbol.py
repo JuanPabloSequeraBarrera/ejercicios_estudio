@@ -57,18 +57,19 @@ while sistema_en_uso:
                     item[4]+= marcador1
                     item[5]+= 1
         else:
-                if (local in item):
-                    item[1]+= 1
-                    item[3]+=marcador1
-                    item[4]+=marcador2
-                    item[6]+= 1
-                    item[7]+= 1
-                elif (visitante in item):
-                    item[1]+= 1
-                    item[3]+=marcador2
-                    item[4]+=marcador1
-                    item[6]+= 1
-                    item[7]+= 1
+                for l,item in enumerate (equipos):
+                    if (local in item) and (marcador1== marcador2):
+                        item[1]+= 1
+                        item[3]+=marcador1
+                        item[4]+=marcador2
+                        item[6]+= 1
+                        item[7]+= 1
+                    elif (visitante in item) and (marcador1 ==marcador2):
+                        item[1]+= 1
+                        item[3]+=marcador2
+                        item[4]+=marcador1
+                        item[6]+= 1
+                        item[7]+= 1
     elif(op == 3):
         print ('Reporte de tabla de posciones')
         import os
